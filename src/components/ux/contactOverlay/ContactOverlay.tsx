@@ -1,15 +1,16 @@
-import { FC, useState } from "react";
+import { FC, useContext } from "react";
+import OverlayContext from "../../context/OverlayContext";
 import FormContainer from "../formContainer/FormContainer";
 import styles from './ContactOverlay.module.scss';
 
 const ContactOverlay: FC = () => {
-    const [isActive, setIsActive] = useState(false);
+    const { isFormActive, setIsFormActive } = useContext(OverlayContext);
 
     const setIsActiveHandler = () => {
-        setIsActive(prevState => !prevState);
+        setIsFormActive(!isFormActive);
     }
-    
-    return <div className={`${styles.overlay} ${isActive ? styles.active: ''}`}>
+
+    return <div className={`${styles.overlay} ${isFormActive ? styles.active : ''}`}>
         <button className={styles.button} onClick={setIsActiveHandler}>show / hide</button>
         <div className={styles.left}></div>
         <div className={styles.right}>
