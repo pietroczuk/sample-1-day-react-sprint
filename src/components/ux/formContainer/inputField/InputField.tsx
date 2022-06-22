@@ -1,4 +1,4 @@
-import { Dispatch, FC, FormEvent, SetStateAction } from "react";
+import { ChangeEventHandler, FC, FocusEventHandler } from "react";
 import ValidIcon from "../../validation/validIcon/ValidIcon";
 import styles from './inputField.module.scss';
 
@@ -7,29 +7,17 @@ interface InputFieldProps {
     inputType: string,
     value: string,
     label: string,
-    wasTouched: boolean,
-    valueIsValid: boolean,
-    onChangeHandlerFn: Dispatch<SetStateAction<string>>,
-    onBlurHandlerFn: Dispatch<SetStateAction<boolean>>,
+    hasError: boolean | null,
+    isValid: boolean,
+    onChangeHandler: ChangeEventHandler<HTMLTextAreaElement | HTMLInputElement>,
+    onBlurHandler: FocusEventHandler<HTMLTextAreaElement | HTMLInputElement>,
 }
 
 const InputField: FC<InputFieldProps> = (props) => {
-    const { fieldId, inputType, value, label, wasTouched, valueIsValid, onChangeHandlerFn, onBlurHandlerFn } = props;
+    const { fieldId, inputType, value, label, hasError, isValid, onChangeHandler, onBlurHandler } = props;
 
-    let nameInputClasses = '';
-    if (wasTouched && valueIsValid) {
-        nameInputClasses = styles.valid;
-    }
-    if (wasTouched && !valueIsValid) {
-        nameInputClasses = styles.invalid;
-    }
-    const onBlurHandler = () => {
-        onBlurHandlerFn(true);
-    }
-    const onChangeHandler = (event: FormEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-        const inputValue = event.currentTarget.value;
-        onChangeHandlerFn(inputValue);
-    }
+    const inputClass = hasError === null ? '' : hasError ? styles.invalid : styles.valid;
+
     return (
         <div className={styles.inputDataContainer}>
             <label htmlFor={fieldId}>{label}</label>
@@ -37,14 +25,14 @@ const InputField: FC<InputFieldProps> = (props) => {
                 {inputType === 'textarea' ?
                     <textarea
                         rows={4}
-                        className={nameInputClasses}
+                        className={inputClass}
                         id={fieldId}
                         onChange={onChangeHandler}
                         onBlur={onBlurHandler}
                         value={value}
                     ></textarea> :
                     <input
-                        className={nameInputClasses}
+                        className={inputClass}
                         id={fieldId}
                         type={inputType}
                         onChange={onChangeHandler}
@@ -52,7 +40,9 @@ const InputField: FC<InputFieldProps> = (props) => {
                         value={value}
                     />
                 }
-                <ValidIcon isValid={valueIsValid} isHiding={!wasTouched} />
+                {hasError !== null &&
+                    <ValidIcon isValid={isValid} />
+                }
             </div>
         </div>
     )
