@@ -3,7 +3,6 @@ import { FormEvent, useState } from "react";
 const useInput = (validateFn: (valueForCheck: string) => boolean) => {
     const [value, setValue] = useState('');
     const [inputWasTouched, setInputWasTouched] = useState(false);
-
     const inputValueIsValid = validateFn(value);
 
     let hasError = null;
@@ -15,6 +14,7 @@ const useInput = (validateFn: (valueForCheck: string) => boolean) => {
     }
 
     const onChangeHandler = (event: FormEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+        console.log('change', validateFn, inputValueIsValid, event.currentTarget.value);
         setValue(event.currentTarget.value);
     }
 

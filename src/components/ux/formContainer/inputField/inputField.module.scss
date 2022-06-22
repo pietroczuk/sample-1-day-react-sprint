@@ -1,3 +1,5 @@
+$inputBgColor : #f7f7f7;
+
 .inputDataContainer,
 .inputContainer {
     position: relative;
@@ -26,13 +28,13 @@ textarea {
     margin          : 0em 0em 1em 0em;
     padding         : 0.7em 2.2em 0.7em 0.7em;
     border          : none;
-    background-color: #f7f7f7;
+    background-color: $inputBgColor ;
     font-size       : 1em;
     font-family     : inherit;
     width           : 100%;
     box-sizing      : border-box;
-    outline         : #f7f7f7;
-    border-bottom   : 2px solid #f7f7f7;
+    outline         : $inputBgColor ;
+    border-bottom   : 2px solid $inputBgColor ;
 
     &.invalid {
         border-bottom: 2px solid #ffa700;
@@ -41,4 +43,10 @@ textarea {
     &.valid {
         border-bottom: 2px solid #45cd4e;
     }
+
+
+}
+
+input:-internal-autofill-selected {
+    box-shadow: 0 0 0 2em $inputBgColor inset !important;
 }

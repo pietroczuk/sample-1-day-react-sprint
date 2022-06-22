@@ -1,9 +1,10 @@
 import { FC, FormEvent } from "react";
 import styles from './FormContainer.module.scss';
-import { validateEmail, validateMessage, validateName, validatePhone } from "../../../utils/utils";
+import { validateEmail, validateMessage, validateName, validatePhone } from "../../../utils/formUtils";
 import InputField from "./inputField/InputField";
 
 import useInput from "../../../hooks/useInput";
+import BotPrevent from "../botPrevent/BotPrevent";
 
 const FormContainer: FC = () => {
     const nameData = useInput(validateName);
@@ -13,7 +14,6 @@ const FormContainer: FC = () => {
 
     const formIsValid = nameData.isValid && emailData.isValid && phoneData.isValid && messageData.isValid;
 
-    console.log('formHasError', formIsValid);
     const resetForm = () => {
         nameData.reset();
         emailData.reset();
@@ -26,7 +26,7 @@ const FormContainer: FC = () => {
     }
 
     return <div className={styles.container}>
-        <form onSubmit={formSubmitionHandler} autoComplete="off">
+        <form onSubmit={formSubmitionHandler} autoComplete="nope">
             <InputField
                 fieldId="name"
                 label="Imię i nazwisko"
@@ -53,7 +53,7 @@ const FormContainer: FC = () => {
                 {...messageData}
             />
 
-            <p>nie jestem robotem itd</p>
+            <BotPrevent />
             <p>moze jakies rodo jeszcze</p>
 
             <button className={`${styles.submit} ${formIsValid ? '' : styles.disabled}`} type="submit">wyślij</button>

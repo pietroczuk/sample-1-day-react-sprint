@@ -1,0 +1,66 @@
+[
+    {
+        "question" : "Pytanie 1",
+        "answers": [
+            {
+                "answer": "Tak",
+                "correct": true
+            },
+            {
+                "answer": "Nie"
+            },
+            {
+                "answer": "Nie2"
+            }
+        ]
+
+    },
+    {
+        "question" : "Pytanie 2",
+        "answers": [
+            {
+                "answer": "Tak",
+                "correct": true
+            },
+            {
+                "answer": "Nie"
+            },
+            {
+                "answer": "Nie2"
+            }
+        ]
+
+    },
+    {
+        "question" : "Pytanie 3",
+        "answers": [
+            {
+                "answer": "Tak",
+                "correct": true
+            },
+            {
+                "answer": "Nie"
+            },
+            {
+                "answer": "Nie2"
+            }
+        ]
+
+    },
+    {
+        "question" : "Pytanie 4",
+        "answers": [
+            {
+                "answer": "Tak",
+                "correct": true
+            },
+            {
+                "answer": "Nie"
+            },
+            {
+                "answer": "Nie2"
+            }
+        ]
+
+    }
+]
