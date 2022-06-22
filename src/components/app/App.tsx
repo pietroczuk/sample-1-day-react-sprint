@@ -8,12 +8,12 @@ import ContactOverlay from '../ux/contactOverlay/ContactOverlay';
 const App: FC = () => {
   return (
     <>
-      <Header />
-      <Main />
-      <Footer />
       <OverlayContextProvider>
+        <Header />
         <ContactOverlay />
       </OverlayContextProvider>
+      <Main />
+      <Footer />
     </>
   );
 }

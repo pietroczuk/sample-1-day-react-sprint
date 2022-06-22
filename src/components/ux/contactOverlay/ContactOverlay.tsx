@@ -5,18 +5,16 @@ import styles from './ContactOverlay.module.scss';
 
 const ContactOverlay: FC = () => {
     const { isFormActive, setIsFormActive } = useContext(OverlayContext);
-
-    const setIsActiveHandler = () => {
-        setIsFormActive(!isFormActive);
+    const closeHandler = () => {
+        setIsFormActive(false);
     }
-
-    return <div className={`${styles.overlay} ${isFormActive ? styles.active : ''}`}>
-        <button className={styles.button} onClick={setIsActiveHandler}>show / hide</button>
-        <div className={styles.left}></div>
-        <div className={styles.right}>
+    return <>
+        <div className={`${styles.left} ${isFormActive ? styles.active : ''}`}></div>
+        <div className={`${styles.right} ${isFormActive ? styles.active : ''}`}>
+            <button className={styles.close} onClick={closeHandler}>X close</button>
             <FormContainer />
         </div>
-    </div>
+    </>
 }
 
 export default ContactOverlay;
