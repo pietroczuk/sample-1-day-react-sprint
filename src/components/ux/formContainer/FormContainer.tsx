@@ -1,6 +1,7 @@
 import { FC, useState, FormEvent } from "react";
 import styles from './FormContainer.module.scss';
-import ValidIcon from "../validation/validIcon/ValidIcon";
+import { validateName } from "../../../utils/utils";
+import InputField from "./inputField/InputField";
 
 const FormContainer: FC = () => {
     const [name, setName] = useState('');
@@ -8,11 +9,15 @@ const FormContainer: FC = () => {
     const [phone, setPhone] = useState('');
     const [message, setMessage] = useState('');
 
-    const [enteredNameIsValid, setEnteredNameIsValid] = useState(false);
+    const [enteredNameTouched, setEnteredNameTouched] = useState(false);
 
-    const setNameHandler = (event: FormEvent<HTMLInputElement>) => {
-        setName(event.currentTarget.value);
+    const enteredNameIsValid = validateName(name);
+
+    const nameInputChangeHandler = (event: FormEvent<HTMLInputElement>) => {
+        const inputValue = event.currentTarget.value;
+        setName(inputValue);
     }
+
     const setEmailHandler = (event: FormEvent<HTMLInputElement>) => {
         setEmail(event.currentTarget.value);
     }
@@ -27,32 +32,26 @@ const FormContainer: FC = () => {
         setEmail('');
         setPhone('');
         setMessage('');
+        setEnteredNameTouched(false);
     }
+
     const formSubmitionHandler = (event: FormEvent<HTMLFormElement>) => {
         event.preventDefault();
-
-        if (name.trim() === '') {
-            setEnteredNameIsValid(false);
-            return;
-        } else {
-            setEnteredNameIsValid(true);
-        }
-        // console.log(name, email, phone, message);
+        setEnteredNameTouched(true);
     }
 
     return <div className={styles.container}>
         <form onSubmit={formSubmitionHandler}>
-            <div className={styles.inputDataContainer}>
-                <label htmlFor="name">Imię i nazwisko</label>
-                <div className={styles.inputContainer}>
-                    <input className={`${enteredNameIsValid ? styles.valid : styles.invalid}`} id="name" type="text" onChange={setNameHandler} value={name} />
-                    {enteredNameIsValid ?
-                        <ValidIcon isValid={true} />
-                        :
-                        <ValidIcon isValid={false} />
-                    }
-                </div>
-            </div>
+            <InputField 
+                fieldId="name"
+                inputType="text"
+                valueIsValid={enteredNameIsValid}
+                label="Imię i nazwisko"
+                onBlurHandlerFn={setEnteredNameTouched}
+                onChangeHandler={nameInputChangeHandler}
+                value={name}
+                wasTouched={enteredNameTouched}       
+            />
             <div className={styles.inputDataContainer}>
                 <label htmlFor="email">E-mail</label>
                 <input id="email" type="email" onChange={setEmailHandler} value={email} />

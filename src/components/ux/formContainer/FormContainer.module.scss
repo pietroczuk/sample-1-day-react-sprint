@@ -4,49 +4,8 @@
 }
 
 form {
-    .inputDataContainer,
-    .inputContainer {
-        position: relative;
-    }
 
-    label {
-        font-size     : 0.9em;
-        font-weight   : 500;
-        // position   : absolute;
-        // top        : 50%;
-        // transform  : translateY(-50%);
-        // left       : 1em;
-        color         : #6e6e6e;
-        // transition: top 0.3s ease-in-out, font-size 0.3s ease-in-out;
-    }
-
-    // input:focus + label {
-    //     font-size: 0.7em;
-    // }
-
-    input,
-    textarea {
-        display            : block;
-        margin             : 0em 0em 1em 0em;
-        padding            : 0.7em 1em;
-        border             : none;
-        background-color   : #f7f7f7;
-        font-size          : 1em;
-        // border-bottom   : 2px solid #ccc;
-        font-family        : inherit;
-        width              : 100%;
-        box-sizing         : border-box;
-        outline            : #f7f7f7;
-        border-bottom      : 2px solid #f7f7f7;
-
-        &.invalid {
-            border-bottom: 2px solid #ffa700;
-        }
-
-        &.valid {
-            border-bottom: 2px solid #45cd4e;
-        }
-    }
+    
 
 
     .submit {
