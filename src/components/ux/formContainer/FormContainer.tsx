@@ -1,6 +1,6 @@
 import { FC, useState, FormEvent } from "react";
 import styles from './FormContainer.module.scss';
-import { validateName } from "../../../utils/utils";
+import { validateEmail, validateMessage, validateName, validatePhone } from "../../../utils/utils";
 import InputField from "./inputField/InputField";
 
 const FormContainer: FC = () => {
@@ -10,23 +10,15 @@ const FormContainer: FC = () => {
     const [message, setMessage] = useState('');
 
     const [enteredNameTouched, setEnteredNameTouched] = useState(false);
+    const [enteredEmailTouched, setEnteredEmailTouched] = useState(false);
+    const [enteredPhoneTouched, setEnteredPhoneTouched] = useState(false);
+    const [enteredMessageTouched, setEnteredMessageTouched] = useState(false);
 
     const enteredNameIsValid = validateName(name);
+    const enteredEmailIsValid = validateEmail(email);
+    const enteredPhoneIsValid = validatePhone(phone);
+    const enteredMessageIsValid = validateMessage(message);
 
-    const nameInputChangeHandler = (event: FormEvent<HTMLInputElement>) => {
-        const inputValue = event.currentTarget.value;
-        setName(inputValue);
-    }
-
-    const setEmailHandler = (event: FormEvent<HTMLInputElement>) => {
-        setEmail(event.currentTarget.value);
-    }
-    const setPhoneHandler = (event: FormEvent<HTMLInputElement>) => {
-        setPhone(event.currentTarget.value);
-    }
-    const setMessageHandler = (event: FormEvent<HTMLTextAreaElement>) => {
-        setMessage(event.currentTarget.value);
-    }
     const resetForm = () => {
         setName('');
         setEmail('');
@@ -48,24 +40,41 @@ const FormContainer: FC = () => {
                 valueIsValid={enteredNameIsValid}
                 label="Imię i nazwisko"
                 onBlurHandlerFn={setEnteredNameTouched}
-                onChangeHandler={nameInputChangeHandler}
+                onChangeHandlerFn={setName}
                 value={name}
                 wasTouched={enteredNameTouched}       
             />
-            <div className={styles.inputDataContainer}>
-                <label htmlFor="email">E-mail</label>
-                <input id="email" type="email" onChange={setEmailHandler} value={email} />
-            </div>
-
-            <div className={styles.inputDataContainer}>
-                <label htmlFor="phone">Telefon</label>
-                <input id="phone" type="phone" onChange={setPhoneHandler} value={phone} />
-            </div>
-            <div className={styles.inputDataContainer}>
-                <label htmlFor="message">Wiadomość</label>
-                <textarea id="message" rows={4} onChange={setMessageHandler} value={message} />
-            </div>
-
+            <InputField 
+                fieldId="email"
+                inputType="email"
+                valueIsValid={enteredEmailIsValid}
+                label="E-mail"
+                onBlurHandlerFn={setEnteredEmailTouched}
+                onChangeHandlerFn={setEmail}
+                value={email}
+                wasTouched={enteredEmailTouched}       
+            />
+            <InputField 
+                fieldId="phone"
+                inputType="phone"
+                valueIsValid={enteredPhoneIsValid}
+                label="Telefon"
+                onBlurHandlerFn={setEnteredPhoneTouched}
+                onChangeHandlerFn={setPhone}
+                value={phone}
+                wasTouched={enteredPhoneTouched}       
+            />
+            <InputField 
+                fieldId="message"
+                inputType="textarea"
+                valueIsValid={enteredMessageIsValid}
+                label="Wiadomość"
+                onBlurHandlerFn={setEnteredMessageTouched}
+                onChangeHandlerFn={setMessage}
+                value={message}
+                wasTouched={enteredMessageTouched}       
+            />
+            
             <p>nie jestem robotem itd</p>
             <p>moze jakies rodo jeszcze</p>
 
