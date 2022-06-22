@@ -4,6 +4,7 @@
 }
 
 form {
+    .inputDataContainer,
     .inputContainer {
         position: relative;
     }
@@ -35,7 +36,18 @@ form {
         font-family        : inherit;
         width              : 100%;
         box-sizing         : border-box;
+        outline            : #f7f7f7;
+        border-bottom      : 2px solid #f7f7f7;
+
+        &.invalid {
+            border-bottom: 2px solid #ffa700;
+        }
+
+        &.valid {
+            border-bottom: 2px solid #45cd4e;
+        }
     }
+
 
     .submit {
         width           : 100%;

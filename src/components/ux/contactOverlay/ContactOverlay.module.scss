@@ -30,9 +30,10 @@
     transition      : transform 0.3s ease-in-out;
 
     display      : flex;
-    align-content: center;
-    flex-wrap    : nowrap;
-    align-items  : center;
+    // align-content: center;
+    // flex-wrap    : nowrap;
+    // align-items  : center;
+    overflow-y: auto;
 
     .close {
         position        : absolute;
