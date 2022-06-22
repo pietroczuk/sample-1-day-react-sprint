@@ -1,7 +1,13 @@
 .navigation {
     .menu {
+        margin    : 0;
+        padding   : 0;
+        list-style: none;
+        display   : flex;
+        gap       : 1em;
+
         .item {
-            
+            padding: 0.7em 1em;
         }
     }
 }
