@@ -20,19 +20,19 @@ const InputField: FC<InputFieldProps> = (props) => {
 
     return (
         <div className={styles.inputDataContainer}>
-            <label htmlFor={fieldId}>{label}</label>
+            <label htmlFor={fieldId} className={styles.label}>{label}</label>
             <div className={styles.inputContainer}>
                 {inputType === 'textarea' ?
                     <textarea
                         rows={4}
-                        className={inputClass}
+                        className={`${inputClass} ${styles.textarea}`}
                         id={fieldId}
                         onChange={onChangeHandler}
                         onBlur={onBlurHandler}
                         value={value}
                     ></textarea> :
                     <input
-                        className={inputClass}
+                        className={`${inputClass} ${styles.input}`}
                         id={fieldId}
                         type={inputType}
                         onChange={onChangeHandler}

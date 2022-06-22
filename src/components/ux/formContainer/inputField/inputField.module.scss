@@ -5,7 +5,7 @@ $inputBgColor : #f7f7f7;
     position: relative;
 }
 
-label {
+.label {
     font-size     : 0.9em;
     font-weight   : 500;
     // position   : absolute;
@@ -22,8 +22,8 @@ label {
 //     font-size: 0.7em;
 // }
 
-input,
-textarea {
+.input,
+.textarea {
     display         : block;
     margin          : 0em 0em 1em 0em;
     padding         : 0.7em 2.2em 0.7em 0.7em;
@@ -47,6 +47,6 @@ textarea {
 
 }
 
-input:-internal-autofill-selected {
+.input:-internal-autofill-selected {
     box-shadow: 0 0 0 2em $inputBgColor inset !important;
 }
