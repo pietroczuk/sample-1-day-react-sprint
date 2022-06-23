@@ -19,14 +19,42 @@ $paddingContainer: 2em;
         }
 
         .answersContainer {
-            padding: 1em 0em;
+            padding       : 1em 0em;
+            width         : 90%;
+            display       : flex;
+            flex-direction: column;
+            gap           : 0.5em;
 
             .answer {
-                display: block;
+                position: relative;
 
-                label {}
+                label {
+                    display         : block;
+                    padding         : 0.5em 1em;
+                    font-size       : 0.9em;
+                    cursor          : pointer;
+                    border          : 1px solid #e2e2e2;
+                    border-radius   : 0.3em;
+                    background-color: #fff;
+                    transition      : background-color 0.3s ease-in-out;
 
-                input {}
+                    &:hover {
+                        background-color: #eee;
+                    }
+                }
+
+                input {
+                    position: absolute;
+                    opacity : 0;
+                    cursor  : pointer;
+                    height  : 0;
+                    width   : 0;
+
+                    &:checked+label {
+                        background-color: #eee;
+                        font-weight     : 600;
+                    }
+                }
             }
         }
     }

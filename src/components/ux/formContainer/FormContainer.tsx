@@ -22,7 +22,13 @@ const FormContainer: FC<FormContainerProps> = ({ isFormActive }) => {
 
     const captchaData = useCaptcha(validateAnswer);
 
-    const formIsValid = nameData.isValid && emailData.isValid && phoneData.isValid && messageData.isValid && captchaData.isPassed;
+    const [rodoPassed, setRodoPassed] = useState(false);
+
+    const rodoClickHandler = () => {
+        setRodoPassed(prev => !prev);
+    }
+
+    const formIsValid = nameData.isValid && emailData.isValid && phoneData.isValid && messageData.isValid && captchaData.isPassed && rodoPassed;
 
     const resetForm = useCallback(() => {
         nameData.reset();
@@ -30,6 +36,7 @@ const FormContainer: FC<FormContainerProps> = ({ isFormActive }) => {
         phoneData.reset();
         messageData.reset();
         captchaData.reset();
+        setRodoPassed(false);
     }, [nameData, emailData, phoneData, messageData, captchaData]);
 
     useEffect(() => {
@@ -38,8 +45,6 @@ const FormContainer: FC<FormContainerProps> = ({ isFormActive }) => {
             resetForm();
         }
     }, [isFormActive, resetForm, isFormActiveChanged])
-
-    // console.log('isFormActive', isFormActive);
 
     const formSubmitionHandler = (event: FormEvent<HTMLFormElement>) => {
         event.preventDefault();
@@ -73,10 +78,9 @@ const FormContainer: FC<FormContainerProps> = ({ isFormActive }) => {
                 {...messageData}
             />
             <BotPrevent {...captchaData} />
-            <CheckBox label="Rodo jakies czy cos innego" onClick={() => { }} />
+            <CheckBox label="Rodo jakies czy cos innego" onClick={rodoClickHandler} checked={rodoPassed} />
 
             <button className={`${styles.submit} ${formIsValid ? '' : styles.disabled}`} type="submit">wyślij</button>
-            <button onClick={resetForm}>reset</button>
         </form>
     </div>
 }
