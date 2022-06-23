@@ -41,3 +41,11 @@
         background-color: transparent;
     }
 }
+@media (max-width: 600px) {
+    .left {
+        display: none;
+    }
+    .right {
+        width: 100%;
+    }
+}
