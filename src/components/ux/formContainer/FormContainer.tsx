@@ -1,4 +1,4 @@
-import { FC, FormEvent } from "react";
+import { FC, FormEvent, useCallback, useEffect, useState } from "react";
 import styles from './FormContainer.module.scss';
 import { validateEmail, validateMessage, validateName, validatePhone } from "../../../utils/formUtils";
 import InputField from "./inputField/InputField";
@@ -8,7 +8,12 @@ import BotPrevent from "../botPrevent/BotPrevent";
 import useCaptcha from "../../../hooks/useCaptcha";
 import { validateAnswer } from "../../../utils/botUtils";
 
-const FormContainer: FC = () => {
+interface FormContainerProps {
+    isFormActive: boolean
+}
+const FormContainer: FC<FormContainerProps> = ({ isFormActive }) => {
+    const [isFormActiveChanged, setIsFormActiveChanged] = useState(isFormActive)
+
     const nameData = useInput(validateName);
     const emailData = useInput(validateEmail);
     const phoneData = useInput(validatePhone);
@@ -16,14 +21,24 @@ const FormContainer: FC = () => {
 
     const captchaData = useCaptcha(validateAnswer);
 
-    const formIsValid = nameData.isValid && emailData.isValid && phoneData.isValid && messageData.isValid;
+    const formIsValid = nameData.isValid && emailData.isValid && phoneData.isValid && messageData.isValid && captchaData.isPassed;
 
-    const resetForm = () => {
+    const resetForm = useCallback(() => {
         nameData.reset();
         emailData.reset();
         phoneData.reset();
         messageData.reset();
-    }
+        captchaData.reset();
+    }, [nameData, emailData, phoneData, messageData, captchaData]);
+
+    useEffect(() => {
+        if (isFormActiveChanged !== isFormActive) {
+            setIsFormActiveChanged(isFormActive);
+            resetForm();
+        }
+    }, [isFormActive, resetForm, isFormActiveChanged])
+
+    // console.log('isFormActive', isFormActive);
 
     const formSubmitionHandler = (event: FormEvent<HTMLFormElement>) => {
         event.preventDefault();

@@ -12,7 +12,7 @@ const ContactOverlay: FC = () => {
         <div className={`${styles.left} ${isFormActive ? styles.active : ''}`}></div>
         <div className={`${styles.right} ${isFormActive ? styles.active : ''}`}>
             <button className={styles.close} onClick={closeHandler}>X close</button>
-            <FormContainer />
+            <FormContainer isFormActive={isFormActive} />
         </div>
     </>
 }
