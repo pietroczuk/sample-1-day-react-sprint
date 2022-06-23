@@ -1,0 +1,42 @@
+.heroMediaContener {
+    width           : 70%;
+    margin          : auto;
+    background-color: #161616;
+    position        : relative;
+    top             : -5em;
+    display         : flex;
+    box-shadow      : 0px 10px 90px 10px rgb(0 0 0 / 60%);
+
+    .videoContener,
+    .videoDescription {
+        width: 50%;
+    }
+
+    .videoDescription {
+        padding: 3em;
+
+        .eventDate {
+            margin     : 0;
+            font-weight: 700;
+            color      : #757474;
+        }
+
+        .eventLabel {
+            font-size: 2em;
+            margin   : 0;
+        }
+
+        .eventDescription {
+            font-size    : 1em;
+            margin-top   : 2em;
+            margin-bottom: 0;
+            line-height  : 1.5em;
+            color        : #a8a8a8;
+
+            span {
+                white-space: nowrap;
+                font-weight: 600;
+            }
+        }
+    }
+}

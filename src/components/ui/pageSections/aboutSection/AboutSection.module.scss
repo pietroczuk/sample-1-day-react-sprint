@@ -1,0 +1,16 @@
+.aboutContener {
+    margin-top           : -15em;
+    padding-top          : 15em;
+    // background-repeat    : no-repeat;
+    // background-position  : right top;
+    // background-color     : #000;
+    // background-attachment: fixed;
+
+    .wrapper {
+        max-width: 70%;
+        margin   : auto;
+        .content {
+            width: 50%;
+        }
+    }
+}
