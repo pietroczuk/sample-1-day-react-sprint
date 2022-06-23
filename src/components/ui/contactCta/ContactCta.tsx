@@ -8,7 +8,7 @@ const ContactCta: FC = () => {
         setIsFormActive(true);
     }
     return <div className={styles.cta} onClick={clickHandler}>
-        kontakt cta
+        współpraca
     </div>
 }
 

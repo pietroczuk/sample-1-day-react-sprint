@@ -1,6 +1,6 @@
 .aboutContener {
-    margin-top           : -15em;
-    padding-top          : 15em;
+    margin-top              : -15em;
+    padding-top             : 15em;
     // background-repeat    : no-repeat;
     // background-position  : right top;
     // background-color     : #000;
@@ -9,8 +9,34 @@
     .wrapper {
         max-width: 70%;
         margin   : auto;
+
         .content {
             width: 50%;
+            padding: 3em 0 6em 0;
+
+            .sectionName {
+                margin     : 0;
+                color      : #797979;
+                font-weight: 700;
+
+            }
+
+            .sectionHeading {
+                margin: 0.2em 0;
+            }
+
+            .sectionSubheading {
+                border-bottom : 1px solid #161616;
+                text-transform: uppercase;
+                font-size     : 0.8em;
+                color         : #787878;
+                padding-bottom: 4em;
+                margin-bottom : 4em;
+            }
+
+            .sectionDescription {
+                line-height: 1.5em;
+            }
         }
     }
 }
