@@ -33,7 +33,7 @@
             cursor          : not-allowed;
         }
 
-        &:hover {
+        &:hover:not(.disabled) {
             background-color: #00a845;
         }
     }
