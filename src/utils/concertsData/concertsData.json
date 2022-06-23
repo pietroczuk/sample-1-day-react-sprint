@@ -1,27 +1,27 @@
 [
     {
-        "city": "Białystok",
-        "date": "12/12/2022",
-        "place": "amfiteatr"
+        "city": "Białystok, Polska",
+        "date": "12-12-2022",
+        "place": "amfiteatr miejski"
     },
     {
-        "city": "Białystok2",
-        "date": "12/12/2022",
-        "place": "amfiteatr"
+        "city": "Nowy Jork, USA",
+        "date": "7-3-2023",
+        "place": "Times square"
     },
     {
-        "city": "Białystok3",
-        "date": "12/12/2022",
-        "place": "amfiteatr"
+        "city": "Berlin, Niemcy",
+        "date": "21-4-2023",
+        "place": "opera narodowa"
     },
     {
-        "city": "Białystok4",
-        "date": "12/12/2022",
-        "place": "amfiteatr"
+        "city": "Londyn, Wielka Brytania",
+        "date": "13-5-2023",
+        "place": "plac wybrzeża"
     },
     {
-        "city": "Białystok4",
-        "date": "12/12/2022",
-        "place": "amfiteatr"
+        "city": "Tokio, Japonia",
+        "date": "8-9-2023",
+        "place": "stadion narodowy"
     }
 ]
