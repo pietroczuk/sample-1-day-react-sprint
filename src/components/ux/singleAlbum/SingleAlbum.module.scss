@@ -1,5 +1,6 @@
 .albumContainer {
-    padding: 3em;
+    padding   : 3em;
+    text-align: center;
 
     .albumImageCover {
         position: relative;
@@ -8,7 +9,17 @@
             z-index   : 2;
             position  : relative;
             left      : 0;
-            transition: left 0.3s ease-in-out;
+            top       : 0;
+            transform : skew(0, 0);
+            box-shadow: 0px 0px 0px 0px rgb(0 0 0 / 0%);
+            transition: left 0.3s ease-in-out,
+                top 0.3s ease-in-out,
+                transform 0.3s ease-in-out,
+                box-shadow 0.3s ease-in-out;
+
+            img {
+                display: block;
+            }
         }
 
         .cdImage {
@@ -16,34 +27,68 @@
             left      : 0;
             top       : 0;
             z-index   : 1;
-            width     : 100%;
+            width     : 90%;
             transition: left 0.3s ease-in-out;
         }
     }
 
     &:hover {
         .cdImage {
-            left: 3em;
+            left: 6em;
+
         }
 
         .mainImage {
-            left: -3em;
+            left      : -3em;
+            top       : -0.5em;
+            transform : skew(0, -5deg);
+            box-shadow: 0px 10px 20px -10px rgb(0 0 0 / 40%);
+        }
+
+        .albumDetails {
+            box-shadow: 0px 10px 20px -10px rgb(0 0 0 / 40%) !important;
         }
     }
 
-    .albumName {
-        text-align : center;
-        font-weight: 700;
-        margin     : 1em 0;
-    }
+    .albumDetailsCointaner {
+        .albumDetails {
+            padding         : 1em 2em 2em 2em;
+            background-color: #fff;
+            box-shadow      : 0px 10px 20px -20px rgb(0 0 0 / 60%);
+            transition      : box-shadow 0.3s ease-in-out;
 
-    .albumTracksContener {
-        display       : flex;
-        flex-direction: column;
-        gap           : 0.3em;
-    }
+            .albumName {
+                text-align   : center;
+                font-weight  : 700;
+                margin-bottom: 1em;
+            }
 
-    .albumCta {
-        cursor: pointer;
+            .albumTracksContener {
+                display       : flex;
+                flex-direction: column;
+                gap           : 0.3em;
+            }
+
+            .albumCta {
+                cursor          : pointer;
+                background-color: #000;
+                display         : inline-block;
+                color           : #fff;
+                padding         : 1em 3em;
+                margin-top      : 2em;
+                font-size       : 0.7em;
+                text-transform  : uppercase;
+                font-weight     : 700;
+                border-radius   : 3em;
+                border          : 1px solid #000;
+                text-decoration : none;
+                transition      : background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+
+                &:hover {
+                    color           : #000;
+                    background-color: rgba(0, 0, 0, 0);
+                }
+            }
+        }
     }
 }
