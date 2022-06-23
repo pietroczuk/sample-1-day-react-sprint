@@ -1,29 +1,34 @@
 import { FC } from "react";
 import styles from './SingleAlbum.module.scss';
 
-import albumImage from '../../ui/images/albums/album1.jpg';
 import cdImage from '../../ui/images/cd.png'
+import SingleTrack from "./singleTrack/SingleTrack";
 
 interface SingleAlbumProps {
-    id?: number;
-    title: string;
-    tracks?: []
+    name: string;
+    tracks: string[];
+    cover: string;
 }
 
-const SingleAlbum: FC<SingleAlbumProps> = ({ id, title, tracks }) => {
+const SingleAlbum: FC<SingleAlbumProps> = ({ name, tracks, cover }) => {
     // const albumImg = 
     return <div className={styles.albumContainer}>
         <div className={styles.albumImageCover}>
             <div className={styles.mainImage}>
-                <img src={albumImage} width="100%" height="100%" />
+                <img src={cover} width="100%" height="100%" alt={name} />
             </div>
             <div className={styles.cdImage}>
-                <img src={cdImage} width="100%" height="100%" />
+                <img src={cdImage} width="100%" height="100%" alt="plyta dvd" />
             </div>
         </div>
         <div className={styles.albumName}>
-            {title}
+            {name}
         </div>
+        <div className={styles.albumTracksContener}>
+            {tracks.map((track, index) => <SingleTrack key={index} trackName={track} />)}
+        </div>
+        <div className={styles.albumCta}>Kup album</div>
+
     </div>
 }
 

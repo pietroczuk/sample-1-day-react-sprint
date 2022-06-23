@@ -1,13 +1,14 @@
 import { FC } from 'react';
+import albumsData from '../../../../utils/albumsData/albumsData';
 import SingleAlbum from '../../../ux/singleAlbum/SingleAlbum';
 import styles from './AlbumsSection.module.scss';
 
 const AlbumsSection: FC = () => {
+    const albums = albumsData();
+    
     return <div id="albumy" className={styles.albumsContainer}>
         <div className={styles.wrapper}>
-           <SingleAlbum title='Album 1' />
-           <SingleAlbum title='Album 2' />
-           <SingleAlbum title='Album 3' />
+            {albums.map((album, index)=> <SingleAlbum key={index} {...album}/>)}
         </div>
     </div>
 }

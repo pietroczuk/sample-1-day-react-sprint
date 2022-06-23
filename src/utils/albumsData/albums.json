@@ -1,0 +1,32 @@
+[
+    {
+        "name": "album 1",
+        "tracks": [
+            "utwór 1",
+            "utwór 2",
+            "utwór 3",
+            "utwór 4"
+        ],
+        "cover": ""
+    },
+    {
+        "name": "album 2",
+        "tracks": [
+            "utwór 21",
+            "utwór 22",
+            "utwór 23",
+            "utwór 24"
+        ],
+        "cover": ""
+    },
+    {
+        "name": "album 3",
+        "tracks": [
+            "utwór 31",
+            "utwór 32",
+            "utwór 33",
+            "utwór 34"
+        ],
+        "cover": ""
+    }
+]
