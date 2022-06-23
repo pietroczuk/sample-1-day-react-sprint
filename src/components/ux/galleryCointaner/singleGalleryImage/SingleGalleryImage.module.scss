@@ -4,3 +4,9 @@
         display: block;
     }
 }
+
+@media (max-width: 768px) {
+    .singleImageCointaner {
+        min-width: 50%;
+    }
+}

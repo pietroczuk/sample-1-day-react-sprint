@@ -25,9 +25,18 @@
                 content         : '';
                 transition      : width 0.3s ease-in-out
             }
+
             &:hover::after {
                 width: 100%;
             }
+        }
+    }
+}
+
+@media (max-width: 900px) {
+    .navigation {
+        .menu {
+            display: none;
         }
     }
 }

@@ -5,3 +5,10 @@
     margin-top           : 6em;
     margin-bottom        : 0em;
 }
+
+
+@media (max-width: 768px) {
+    .galleryCointaner {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
