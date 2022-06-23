@@ -39,3 +39,23 @@
         }
     }
 }
+
+@media (max-width: 600px) {
+    .singleConcertWrapper {
+        flex-direction: column;
+
+        .date {
+            margin       : auto;
+            border-right : none;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.7);
+            padding      : 0;
+            min-width    : auto;
+            text-align   : center;
+            font-size    : 1.2em;
+        }
+
+        .details {
+            text-align: center;
+        }
+    }
+}

@@ -38,10 +38,27 @@
 
 @media (max-width: 768px) {
     .videoCointainer {
-        display : flex;
+        display   : flex;
         overflow-x: scroll;
+
         .videoWrapper {
             min-width: 300px;
+        }
+    }
+}
+
+@media (max-width: 600px) {
+    .mediaConainer {
+        padding: 1em;
+
+        .sectionSubtitle {
+            font-size: 0.75em;
+            max-width: 95%;
+        }
+
+        .videoCointainer {
+            margin-top: 3em;
+            margin-bottom: 3em;
         }
     }
 }

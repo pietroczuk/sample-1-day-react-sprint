@@ -38,3 +38,48 @@
         }
     }
 }
+
+@media (max-width: 768px) {
+    .aboutContener {
+        .wrapper {
+            max-width     : 90%;
+            padding-top   : 0em;
+            padding-bottom: 3em;
+
+            .content {
+                width  : 100%;
+                padding: 0;
+
+                .sectionSubheading {
+                    padding-bottom: 2em;
+                    margin-bottom : 2em;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 600px) {
+    .aboutContener {
+        position: relative;
+
+        &::after {
+            content         : '';
+            width           : 100%;
+            height          : 100%;
+            position        : absolute;
+            background-color: rgba(0, 0, 0, 0.5);
+            top             : 0;
+            z-index         : 1;
+        }
+
+        .wrapper {
+            z-index : 2;
+            position: relative;
+        }
+
+        // .wrapper {
+        //     max-width: 100%;
+        // }
+    }
+}

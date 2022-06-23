@@ -56,3 +56,31 @@
         right  : 10;
     }
 }
+
+@media (max-width: 900px) {
+    .heroCointaner {
+
+        .leftContent,
+        .rightContent {
+            font-size: 4em;
+        }
+    }
+}
+
+@media (max-width: 600px) {
+    .heroCointaner {
+        .heroImage {
+            width: 100%;
+
+            img {
+                width: 100%;
+                height: auto;
+            }
+        }
+
+        .leftContent,
+        .rightContent {
+            font-size: 3em;
+        }
+    }
+}

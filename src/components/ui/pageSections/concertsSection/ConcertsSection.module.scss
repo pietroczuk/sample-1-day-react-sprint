@@ -22,3 +22,13 @@
         z-index       : 2;
     }
 }
+
+@media (max-width: 900px) {
+    .concertsCointainer {
+        justify-content: center;
+
+        .concertsWrapper {
+            gap: 3em;
+        }
+    }
+}

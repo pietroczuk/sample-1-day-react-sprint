@@ -40,3 +40,36 @@
         }
     }
 }
+
+@media (max-width: 900px) {
+    .heroMediaContener {
+        flex-direction: column-reverse;
+
+        .videoContener,
+        .videoDescription {
+            width     : 100%;
+            box-sizing: border-box;
+        }
+
+        .videoContener {
+            min-height: 300px;
+            height    : 300px;
+        }
+    }
+}
+
+@media (max-width: 600px) {
+    .heroMediaContener {
+        width  : 95%;
+        z-index: 2;
+
+        .videoDescription {
+            padding: 2em;
+
+            .eventLabel {
+                font-size: 1.2em;
+            }
+        }
+
+    }
+}

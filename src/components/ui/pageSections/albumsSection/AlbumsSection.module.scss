@@ -33,3 +33,14 @@
         overflow-x: scroll;
     }
 }
+
+@media (max-width: 600px) {
+    .albumsContainer {
+        padding: 1em 0;
+
+        .sectionSubtitle {
+            font-size: 0.75em;
+            max-width: 95%;
+        }
+    }
+}
