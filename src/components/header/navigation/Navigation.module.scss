@@ -9,9 +9,25 @@
         .item {
             padding: 0.7em 1em;
         }
+
         .link {
             text-decoration: none;
-            color: #fff
+            color          : #fff;
+            position       : relative;
+
+            &::after {
+                position        : absolute;
+                left            : 0;
+                bottom          : -0.1em;
+                height          : 1px;
+                width           : 0%;
+                background-color: #fff;
+                content         : '';
+                transition      : width 0.3s ease-in-out
+            }
+            &:hover::after {
+                width: 100%;
+            }
         }
     }
 }
