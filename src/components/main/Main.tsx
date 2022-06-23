@@ -1,10 +1,30 @@
 import { FC } from 'react';
 import HeroImage from '../ux/heroImage/HeroImage';
+import YouTubeVideo from '../ux/youTubeVideo/YouTubeVideo';
 import styles from './Main.module.scss';
 
 const Main: FC = () => {
     return <main className={styles.main}>
         <HeroImage />
+
+        <div className={styles.heroMediaContener}>
+            <div className={styles.videoContener}>
+                <YouTubeVideo videoId='IEFB5jVEvqo' title="PEPSI Superbowl" />
+            </div>
+            <div className={styles.videoDescription}>
+                <p className={styles.eventDate}>14 luty 2022</p>
+                <h2 className={styles.eventLabel}>PEPSI Superbowl<br/>50 cent, Dr. Dre, Snoop Dogg, Eminem, Mary J. Blige, Kendrick Lamar</h2>
+                <div className={styles.eventDescription}>
+                    Halftime Show podczas Super Bowl to zawsze ogromne wydarzenie, nie tylko muzyczne. W tym roku finał rozgrywek futbolu amerykańskiego zdominował <span>hip-hop</span>.
+                </div>
+            </div>
+
+            {/* <div className={styles.mediaLabel}>PEPSI Superbowl</div>
+            <p> The standard Lorem Ipsum passage, used since the 1500s
+                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+            </p> */}
+        </div>
+
         The standard Lorem Ipsum passage, used since the 1500s
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
 
