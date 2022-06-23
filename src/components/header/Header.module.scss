@@ -10,5 +10,10 @@
     width           : 100%;
     box-sizing      : border-box;
     color           : #fff;
-    z-index         : 1;
+    z-index         : 3;
+    transition      : background-color 0.3s ease-in-out;
+
+    &.darkBackground {
+        background-color: rgba(0, 0, 0, 1);
+    }
 }
