@@ -1,66 +1,77 @@
 [
     {
-        "question" : "Pytanie 1",
+        "question": "W którym mieście 50cent grał koncert?",
         "answers": [
             {
-                "answer": "Tak",
+                "answer": "Nowy Jork",
                 "correct": true
             },
             {
-                "answer": "Nie"
+                "answer": "Tykocin"
             },
             {
-                "answer": "Nie2"
+                "answer": "Białystok"
             }
         ]
-
     },
     {
-        "question" : "Pytanie 2",
+        "question": "Ostatnio 50cent występował z",
         "answers": [
             {
-                "answer": "Tak",
+                "answer": "Eminemem",
                 "correct": true
             },
             {
-                "answer": "Nie"
+                "answer": "Zenkiem Martynikiem"
             },
             {
-                "answer": "Nie2"
+                "answer": "Popkiem"
             }
         ]
-
     },
     {
-        "question" : "Pytanie 3",
+        "question": "Grupa 50centa to",
         "answers": [
             {
-                "answer": "Tak",
+                "answer": "G-Unit",
                 "correct": true
             },
             {
-                "answer": "Nie"
+                "answer": "Gang Albani"
             },
             {
-                "answer": "Nie2"
+                "answer": "Boys"
             }
         ]
-
     },
     {
-        "question" : "Pytanie 4",
+        "question": "Styl muzyczny 50centa to",
         "answers": [
             {
-                "answer": "Tak",
+                "answer": "Hip Hop",
                 "correct": true
             },
             {
-                "answer": "Nie"
+                "answer": "Szanty"
             },
             {
-                "answer": "Nie2"
+                "answer": "Disco Polo"
             }
         ]
-
+    },
+    {
+        "question": "Ksywa fifty pochodzi od",
+        "answers": [
+            {
+                "answer": "50 centów",
+                "correct": true
+            },
+            {
+                "answer": "50 żabsów"
+            },
+            {
+                "answer": "50 groszy"
+            }
+        ]
     }
 ]

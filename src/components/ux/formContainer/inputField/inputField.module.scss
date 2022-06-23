@@ -8,19 +8,10 @@ $inputBgColor : #f7f7f7;
 .label {
     font-size     : 0.9em;
     font-weight   : 500;
-    // position   : absolute;
-    // top        : 50%;
-    // transform  : translateY(-50%);
-    // left       : 1em;
     color         : #6e6e6e;
-    // transition: top 0.3s ease-in-out, font-size 0.3s ease-in-out;
     margin-bottom : 5px;
     display       : block;
 }
-
-// input:focus + label {
-//     font-size: 0.7em;
-// }
 
 .input,
 .textarea {

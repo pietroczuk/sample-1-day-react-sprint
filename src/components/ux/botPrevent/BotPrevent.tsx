@@ -47,7 +47,7 @@ const BotPrevent: FC<BotPreventProps> = ({ isPassed, onClickHandler, reset, isUs
                     const answerId = `answer_${answerData.id}_${new Date().getMilliseconds()}`;
                     return <div className={styles.answer} key={answerData.id}>
                         <input id={answerId} type="radio" name="answer" value={answerData.id} onClick={onClickHandler} />
-                        <label htmlFor={answerId}>{answerData.answer} {answerData.id}</label>
+                        <label htmlFor={answerId}>{answerData.answer}</label>
                     </div>
                 })}
             </div>

@@ -1,32 +1,35 @@
 [
     {
-        "name": "album 1",
+        "name": "Get Rich or Die Tryin’",
         "tracks": [
-            "utwór 1",
-            "utwór 2",
-            "utwór 3",
-            "utwór 4"
+            "Patiently Waiting",
+            "In Da Club",
+            "Heat",
+            "Blood Hound"
         ],
-        "cover": ""
+        "cover": "",
+        "buy": "https://www.empik.com/get-rich-or-die-tryin-50-cent,162911,muzyka-p"
     },
     {
-        "name": "album 2",
+        "name": "The Massacre New Edition ",
         "tracks": [
-            "utwór 21",
-            "utwór 22",
-            "utwór 23",
-            "utwór 24"
+            "This Is 50",
+            "Piggy Bank",
+            "Candy Shop (feat. Olivia)",
+            "Get In My Car"
         ],
-        "cover": ""
+        "cover": "",
+        "buy": "https://www.empik.com/the-massacre-new-edition-50-cent,271029,muzyka-p"
     },
     {
-        "name": "album 3",
+        "name": "Best Of 50 Cent",
         "tracks": [
-            "utwór 31",
-            "utwór 32",
-            "utwór 33",
-            "utwór 34"
+            "21 Questions",
+            "P.I.M.P.",
+            "Disco Inferno",
+            "Just A Lil Bit"
         ],
-        "cover": ""
+        "cover": "",
+        "buy": "https://www.empik.com/best-of,p1141086045,ebooki-i-mp3-p"
     }
 ]

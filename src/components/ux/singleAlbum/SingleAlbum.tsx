@@ -8,10 +8,10 @@ interface SingleAlbumProps {
     name: string;
     tracks: string[];
     cover: string;
+    buy: string;
 }
 
-const SingleAlbum: FC<SingleAlbumProps> = ({ name, tracks, cover }) => {
-    // const albumImg = 
+const SingleAlbum: FC<SingleAlbumProps> = ({ name, tracks, cover, buy }) => {
     return <div className={styles.albumContainer}>
         <div className={styles.albumDetailsCointaner}>
             <div className={styles.albumImageCover}>
@@ -29,7 +29,7 @@ const SingleAlbum: FC<SingleAlbumProps> = ({ name, tracks, cover }) => {
                 <div className={styles.albumTracksContener}>
                     {tracks.map((track, index) => <SingleTrack key={index} trackName={track} />)}
                 </div>
-                <a href="/#" className={styles.albumCta}>Kup album</a>
+                <a href={buy} target="_blank" rel="noreferrer" className={styles.albumCta}>Kup album</a>
             </div>
         </div>
     </div>
