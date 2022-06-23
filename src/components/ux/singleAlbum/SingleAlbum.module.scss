@@ -36,9 +36,13 @@
         font-weight: 700;
         margin     : 1em 0;
     }
-    .albumTracksContener {
 
+    .albumTracksContener {
+        display       : flex;
+        flex-direction: column;
+        gap           : 0.3em;
     }
+
     .albumCta {
         cursor: pointer;
     }

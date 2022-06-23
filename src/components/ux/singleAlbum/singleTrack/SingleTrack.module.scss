@@ -1,3 +1,38 @@
-.trackContainer {
+$iconSize: 1.5em;
 
+.trackContainer {
+    display    : flex;
+    gap        : 0.5em;
+    align-items: center;
+
+    .icon {
+        cursor    : pointer;
+        width     : $iconSize;
+        height    : $iconSize;
+        padding   : 0.2em;
+        opacity   : 0.3;
+        transition: opacity 0.3s ease-in-out;
+        &.active {
+            opacity: 1;
+        }
+    }
+
+    .name {
+        font-size  : 0.9em;
+        font-weight: 500;
+        color      : #6c6767;
+        position   : relative;
+        left       : 0;
+        transition : left 0.3s ease-in-out;
+    }
+
+    &:hover {
+        .icon {
+            opacity: 1;
+        }
+
+        .name {
+            left: 0.6em
+        }
+    }
 }
