@@ -1,0 +1,30 @@
+.container {
+    display    : flex;
+    align-items: center;
+
+    .imageCointaner {
+        width     : 1.5em;
+        height    : 1.5em;
+        transition: transform 0.3s ease-in-out;
+    }
+
+    .label {
+        font-size   : 0.8em;
+        font-weight : 600;
+        margin-left : 0.5em;
+        opacity     : 0.5;
+        margin-right: 0.5em;
+        transition  : opacity 0.3s ease-in-out;
+    }
+
+    &:hover {
+        .label {
+            opacity: 1;
+        }
+
+        .imageCointaner {
+            transform: rotate(90deg);
+        }
+    }
+
+}

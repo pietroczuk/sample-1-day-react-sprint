@@ -13,7 +13,7 @@ interface FormContainerProps {
     isFormActive: boolean
 }
 const FormContainer: FC<FormContainerProps> = ({ isFormActive }) => {
-    const [isFormActiveChanged, setIsFormActiveChanged] = useState(isFormActive)
+    const [isFormActiveChanged, setIsFormActiveChanged] = useState(isFormActive);
 
     const nameData = useInput(validateName);
     const emailData = useInput(validateEmail);
@@ -72,7 +72,6 @@ const FormContainer: FC<FormContainerProps> = ({ isFormActive }) => {
                 inputType="textarea"
                 {...messageData}
             />
-
             <BotPrevent {...captchaData} />
             <CheckBox label="Rodo jakies czy cos innego" onClick={() => { }} />
 
