@@ -14,8 +14,12 @@ const SingleAlbum: FC<SingleAlbumProps> = ({ id, title, tracks }) => {
     // const albumImg = 
     return <div className={styles.albumContainer}>
         <div className={styles.albumImageCover}>
-            <img src={albumImage} />
-            <img src={cdImage} />
+            <div className={styles.mainImage}>
+                <img src={albumImage} width="100%" height="100%" />
+            </div>
+            <div className={styles.cdImage}>
+                <img src={cdImage} width="100%" height="100%" />
+            </div>
         </div>
         <div className={styles.albumName}>
             {title}

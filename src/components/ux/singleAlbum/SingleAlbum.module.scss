@@ -1,10 +1,39 @@
 .albumContainer {
- 
+    padding: 3em;
+
     .albumImageCover {
-        
+        position: relative;
+
+        .mainImage {
+            z-index   : 2;
+            position  : relative;
+            left      : 0;
+            transition: left 0.3s ease-in-out;
+        }
+
+        .cdImage {
+            position  : absolute;
+            left      : 0;
+            top       : 0;
+            z-index   : 1;
+            width     : 100%;
+            transition: left 0.3s ease-in-out;
+        }
+    }
+
+    &:hover {
+        .cdImage {
+            left: 3em;
+        }
+
+        .mainImage {
+            left: -3em;
+        }
     }
 
     .albumName {
-        
+        text-align : center;
+        font-weight: 700;
+        margin     : 1em 0;
     }
 }
