@@ -77,6 +77,6 @@ const shuffleAnswers = (answers: Array<Answers>) => {
     return cryptoAnswers;
 }
 
-export const checkAnswer = (value: number) => {
+export const validateAnswer = (value: number) => {
     return primeNumbersArray.includes(value - 1);
 }

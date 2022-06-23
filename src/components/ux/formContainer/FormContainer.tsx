@@ -5,12 +5,16 @@ import InputField from "./inputField/InputField";
 
 import useInput from "../../../hooks/useInput";
 import BotPrevent from "../botPrevent/BotPrevent";
+import useCaptcha from "../../../hooks/useCaptcha";
+import { validateAnswer } from "../../../utils/botUtils";
 
 const FormContainer: FC = () => {
     const nameData = useInput(validateName);
     const emailData = useInput(validateEmail);
     const phoneData = useInput(validatePhone);
     const messageData = useInput(validateMessage);
+
+    const captchaData = useCaptcha(validateAnswer);
 
     const formIsValid = nameData.isValid && emailData.isValid && phoneData.isValid && messageData.isValid;
 
@@ -53,7 +57,7 @@ const FormContainer: FC = () => {
                 {...messageData}
             />
 
-            <BotPrevent />
+            <BotPrevent {...captchaData} />
             <p>moze jakies rodo jeszcze</p>
 
             <button className={`${styles.submit} ${formIsValid ? '' : styles.disabled}`} type="submit">wyślij</button>
