@@ -8,6 +8,7 @@ import BotPrevent from "../botPrevent/BotPrevent";
 import useCaptcha from "../../../hooks/useCaptcha";
 import { validateAnswer } from "../../../utils/botUtils";
 import CheckBox from "../../ui/checkBox/CheckBox";
+import LoadingSpinner from "../loadingSpinner/LoadingSpinner";
 
 interface FormContainerProps {
     isFormActive: boolean
@@ -23,12 +24,19 @@ const FormContainer: FC<FormContainerProps> = ({ isFormActive }) => {
     const captchaData = useCaptcha(validateAnswer);
 
     const [rodoPassed, setRodoPassed] = useState(false);
+    const [formIsSubmiting, setFormIsSubmiting] = useState(false);
 
     const rodoClickHandler = () => {
         setRodoPassed(prev => !prev);
     }
 
-    const formIsValid = nameData.isValid && emailData.isValid && phoneData.isValid && messageData.isValid && captchaData.isPassed && rodoPassed;
+    const formIsValid =
+        nameData.isValid &&
+        emailData.isValid &&
+        phoneData.isValid &&
+        messageData.isValid &&
+        (captchaData.isPassed && captchaData.isUserPassed) &&
+        rodoPassed;
 
     const resetForm = useCallback(() => {
         nameData.reset();
@@ -37,6 +45,7 @@ const FormContainer: FC<FormContainerProps> = ({ isFormActive }) => {
         messageData.reset();
         captchaData.reset();
         setRodoPassed(false);
+        setFormIsSubmiting(false);
     }, [nameData, emailData, phoneData, messageData, captchaData]);
 
     useEffect(() => {
@@ -48,10 +57,22 @@ const FormContainer: FC<FormContainerProps> = ({ isFormActive }) => {
 
     const formSubmitionHandler = (event: FormEvent<HTMLFormElement>) => {
         event.preventDefault();
+        if (!formIsValid) return;
+
+        setFormIsSubmiting(true);
+
+        // console.
     }
 
     return <div className={styles.container}>
-        <form onSubmit={formSubmitionHandler} autoComplete="nope">
+        {formIsSubmiting && <div className={styles.sendingOverlay}>
+            <div className={styles.infoContainer}>
+                <h4>Wysyłam wiadomość</h4>
+                <LoadingSpinner />
+            </div>
+        </div>
+        }
+        {!formIsSubmiting && <form onSubmit={formSubmitionHandler} autoComplete="nope">
             <InputField
                 fieldId="name"
                 label="Imię i nazwisko"
@@ -82,6 +103,7 @@ const FormContainer: FC<FormContainerProps> = ({ isFormActive }) => {
 
             <button className={`${styles.submit} ${formIsValid ? '' : styles.disabled}`} type="submit">wyślij</button>
         </form>
+        }
     </div>
 }
 
