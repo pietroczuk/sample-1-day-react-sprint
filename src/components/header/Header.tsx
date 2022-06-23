@@ -30,8 +30,8 @@ const Header: FC = () => {
         <HamburgerMenu isOpen={isMobileMenuOpen} onClick={mobileMenuClickHandler} />
         <div className={`${styles.mobileMenuCointaner} ${isMobileMenuOpen ? styles.open : ''}`}>
             <div className={styles.mobileMenuWrapper}>
-                <Navigation className={styles.mobileNavigation} />
-                <ContactCta className={styles.mobileCta} />
+                <Navigation className={styles.mobileNavigation} onClick={mobileMenuClickHandler} />
+                <ContactCta className={styles.mobileCta} onClick={mobileMenuClickHandler} />
             </div>
         </div>
     </header>
