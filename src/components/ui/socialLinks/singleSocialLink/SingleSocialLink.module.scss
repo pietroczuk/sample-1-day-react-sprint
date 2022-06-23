@@ -1,0 +1,26 @@
+.singleSocial {
+    .link {
+        display        : flex;
+        gap            : 0.2em;
+        align-items    : center;
+        color          : #fff;
+        opacity        : 0.5;
+        text-decoration: none;
+        transition     : opacity 0.3s ease-in-out;
+
+        .icon {
+            padding: 0.1em;
+        }
+
+        .label {
+            font-size  : 0.6em;
+            font-weight: 800;
+        }
+    }
+
+    &:hover {
+        .link {
+            opacity: 1;
+        }
+    }
+}

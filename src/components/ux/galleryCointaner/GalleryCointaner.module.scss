@@ -1,3 +1,7 @@
 .galleryCointaner {
-    margin-top: 6em;
+    display              : grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap                  : 1em;
+    margin-top           : 6em;
+    margin-bottom        : 0em;
 }
