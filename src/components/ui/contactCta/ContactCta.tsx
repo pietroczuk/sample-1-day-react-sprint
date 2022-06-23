@@ -2,12 +2,16 @@ import { FC, useContext } from "react";
 import OverlayContext from "../../context/OverlayContext";
 import styles from './ContactCta.module.scss';
 
-const ContactCta: FC = () => {
+interface ContactCtaProps {
+    className?: string;
+}
+
+const ContactCta: FC<ContactCtaProps> = ({ className }) => {
     const { setIsFormActive } = useContext(OverlayContext);
     const clickHandler = () => {
         setIsFormActive(true);
     }
-    return <div className={styles.cta} onClick={clickHandler}>
+    return <div className={`${styles.cta} ${className}`} onClick={clickHandler}>
         współpraca
     </div>
 }

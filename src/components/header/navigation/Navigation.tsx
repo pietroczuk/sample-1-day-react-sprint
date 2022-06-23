@@ -1,8 +1,12 @@
 import { FC } from "react";
 import styles from './Navigation.module.scss';
 
-const Navigation: FC = () => {
-    return <nav className={styles.navigation}>
+interface NavigationProps {
+    className?: string;
+}
+
+const Navigation: FC<NavigationProps> = ({ className }) => {
+    return <nav className={`${styles.navigation} ${className}`}>
         <ul className={styles.menu}>
             <li className={styles.item}>
                 <a className={styles.link} href="#omnie">
