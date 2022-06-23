@@ -14,7 +14,6 @@ const useInput = (validateFn: (valueForCheck: string) => boolean) => {
     }
 
     const onChangeHandler = (event: FormEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-        console.log('change', validateFn, inputValueIsValid, event.currentTarget.value);
         setValue(event.currentTarget.value);
     }
 
