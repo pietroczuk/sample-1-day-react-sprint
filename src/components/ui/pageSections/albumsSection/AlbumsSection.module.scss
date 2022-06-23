@@ -3,10 +3,26 @@
     padding         : 3em 0;
     color           : #000;
 
+    .sectionTitle,
+    .sectionSubtitle {
+        text-align: center;
+    }
+
+    .sectionTitle {
+        margin-bottom: 0;
+    }
+
+    .sectionSubtitle {
+        font-size: 0.7em;
+        max-width: 70%;
+        margin   : 1em auto;
+        color    : #888;
+    }
+
     .wrapper {
-        max-width: 90%;
-        margin   : auto;
-        display: grid;
+        max-width            : 90%;
+        margin               : auto;
+        display              : grid;
         grid-template-columns: repeat(3, 1fr);
     }
 }

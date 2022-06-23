@@ -3,8 +3,8 @@ import styles from './AboutSection.module.scss';
 import aboutImage from '../../images/about.jpg';
 
 const AboutSection: FC = () => {
-    return <div id="omnie" className={styles.aboutContener} style={{ background: `url(${aboutImage}) no-repeat right center fixed #000`, backgroundSize: "contain"}}>
-        <div className={styles.wrapper}>
+    return <div className={styles.aboutContener} style={{ background: `url(${aboutImage}) no-repeat right center fixed #000`, backgroundSize: "contain" }}>
+        <div id="omnie" className={styles.wrapper}>
             <div className={styles.content}>
 
                 <p className={styles.sectionName}>O mnie</p>
