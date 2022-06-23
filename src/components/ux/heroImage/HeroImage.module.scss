@@ -1,0 +1,29 @@
+.heroCointaner {
+    height          : 100vh;
+    min-height      : 500px;
+    max-height      : 800px;
+    background-color: #050505;
+    position        : relative;
+
+    .heroImage {
+        height    : 100%;
+        text-align: center;
+    }
+
+    .leftContent,
+    .rightContent {
+        position : absolute;
+        top      : 50%;
+        transform: translateY(-50%);
+        color    : #9c9c9e;
+        font-size: 4em;
+    }
+
+    .leftContent {
+        left: 10%;
+    }
+
+    .rightContent {
+        right: 10%;
+    }
+}
