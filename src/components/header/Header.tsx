@@ -9,9 +9,7 @@ const Header: FC = () => {
     return <header className={styles.header}>
         <Logo />
         <Navigation />
-        {/* <OverlayContextProvider> */}
-            <ContactCta />
-        {/* </OverlayContextProvider> */}
+        <ContactCta />
     </header>
 }
 
