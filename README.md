@@ -1,3 +1,15 @@
+# Simple 50 cent website
+
+[Demo](http://neuro.dareyou.pl/)
+
+Form validation is based on prime numbers. At this moment we import question from json.
+But if we wish, we can grab single question from ex. Rest API via fetch.
+AntiBot checked answer value by simple algoritm with prime numbers
+
+## TODO
+
+Add some lightbox to gallery images, and routes etx.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
