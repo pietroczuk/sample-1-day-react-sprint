@@ -10,12 +10,12 @@ const Header: FC = () => {
     useEffect(() => {
         window.onscroll = () => {
             if (window.scrollY > 300) {
-                setIsScrolling(true);
+                !isScrolling && setIsScrolling(true);
             } else {
-                setIsScrolling(false);
+                isScrolling && setIsScrolling(false);
             }
         };
-    }, [])
+    }, [isScrolling])
 
     return <header className={`${styles.header} ${isScrolling ? styles.darkBackground : ''}`}>
         <Logo />

@@ -1,0 +1,31 @@
+.mediaConainer {
+    padding: 5em;
+
+    .sectionTitle,
+    .sectionSubtitle {
+        text-align: center;
+    }
+
+    .sectionTitle {
+        margin-bottom: 0;
+    }
+
+    .sectionSubtitle {
+        font-size: 0.7em;
+        max-width: 70%;
+        margin   : 1em auto;
+        color    : #888;
+    }
+
+    .videoCointainer {
+        display              : grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap                  : 1em;
+        margin-top           : 6em;
+        margin-bottom        : 6em;
+
+        .videoWrapper {
+            min-height: 300px;
+        }
+    }
+}
