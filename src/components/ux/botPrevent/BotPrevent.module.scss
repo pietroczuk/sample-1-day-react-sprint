@@ -1,3 +1,5 @@
+$paddingContainer: 2em;
+
 .mainCointainer {
     position: relative;
 
@@ -8,24 +10,62 @@
         background-color: #fff;
         box-shadow      : 0px 10px 30px -10px rgb(0 0 0 / 30%);
         width           : 100%;
-        padding         : 1em;
+        padding         : $paddingContainer;
         box-sizing      : border-box;
+
+        .question {
+            font-weight: 600;
+            width      : 90%;
+        }
+
+        .answersContainer {
+            padding: 1em 0em;
+
+            .answer {
+                display: block;
+
+                label {}
+
+                input {}
+            }
+        }
     }
+
     .buttonsCointaner {
+        display        : flex;
+        justify-content: space-between;
+        align-items    : center;
+        gap            : 0.5em;
+        font-size      : 1.2em;
+
         .send {
+            width           : 100%;
+            border          : none;
+            background-color: #000;
+            color           : #fff;
+            font-family     : inherit;
+            text-transform  : uppercase;
+            padding         : 1em;
+            font-weight     : 600;
+            font-size       : 0.6em;
+            cursor          : pointer;
+            transition      : background-color 0.3s ease-in-out;
 
-        }
-        .refresh {
-            width: 1.5em;
-            height: 1.5em;
+            &:hover {
+                background-color: #00a845;
+            }
         }
     }
 
-    .answer {
-        display: block;
-
-        label {}
-
-        input {}
+    .closeIconCointaner {
+        position        : absolute;
+        right           : $paddingContainer;
+        top             : $paddingContainer;
+        z-index         : 1;
+        font-size       : 1em;
+        border          : none;
+        background-color: transparent;
     }
+
+
 }

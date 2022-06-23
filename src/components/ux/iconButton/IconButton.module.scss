@@ -1,6 +1,7 @@
 .container {
     display    : flex;
     align-items: center;
+    cursor     : pointer;
 
     .imageCointaner {
         width     : 1.5em;
@@ -23,7 +24,7 @@
         }
 
         .imageCointaner {
-            transform: rotate(90deg);
+            transform: rotate(180deg);
         }
     }
 
