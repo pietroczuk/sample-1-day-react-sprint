@@ -16,7 +16,7 @@ const ContactOverlay: FC = () => {
             <div className={styles.close}>
                 <IconButton iconSrc={closeIcon} onClick={closeHandler} label="Zamknij" />
             </div>
-            <FormContainer isFormActive={isFormActive} />
+            <FormContainer isFormActive={isFormActive} closeHandler={closeHandler}/>
         </div>
     </>
 }

@@ -13,25 +13,28 @@
         }
     }
 
-    form {
-        .submit {
-            width           : 100%;
-            background-color: #000;
-            border          : none;
-            cursor          : pointer;
-            padding         : 1em 2em;
-            text-transform  : uppercase;
-            font-size       : 0.8em;
-            font-weight     : 600;
-            font-family     : inherit;
-            letter-spacing  : 0.04em;
-            color           : #fff;
+    .submit {
+        width           : 100%;
+        background-color: #000;
+        border          : none;
+        cursor          : pointer;
+        padding         : 1em 2em;
+        text-transform  : uppercase;
+        font-size       : 0.8em;
+        font-weight     : 600;
+        font-family     : inherit;
+        letter-spacing  : 0.04em;
+        color           : #fff;
+        transition      : background-color 0.3s ease-in-out;
 
-            &.disabled {
-                background-color: #ccc;
-                color           : rgb(137, 137, 137);
-                cursor          : not-allowed;
-            }
+        &.disabled {
+            background-color: #ccc;
+            color           : rgb(137, 137, 137);
+            cursor          : not-allowed;
+        }
+
+        &:hover {
+            background-color: #00a845;
         }
     }
 }

@@ -11,9 +11,10 @@ import CheckBox from "../../ui/checkBox/CheckBox";
 import LoadingSpinner from "../loadingSpinner/LoadingSpinner";
 
 interface FormContainerProps {
-    isFormActive: boolean
+    isFormActive: boolean;
+    closeHandler: VoidFunction
 }
-const FormContainer: FC<FormContainerProps> = ({ isFormActive }) => {
+const FormContainer: FC<FormContainerProps> = ({ isFormActive, closeHandler }) => {
     const [isFormActiveChanged, setIsFormActiveChanged] = useState(isFormActive);
 
     const nameData = useInput(validateName);
@@ -25,6 +26,7 @@ const FormContainer: FC<FormContainerProps> = ({ isFormActive }) => {
 
     const [rodoPassed, setRodoPassed] = useState(false);
     const [formIsSubmiting, setFormIsSubmiting] = useState(false);
+    const [formHasSend, setFormHasSend] = useState(false);
 
     const rodoClickHandler = () => {
         setRodoPassed(prev => !prev);
@@ -46,6 +48,7 @@ const FormContainer: FC<FormContainerProps> = ({ isFormActive }) => {
         captchaData.reset();
         setRodoPassed(false);
         setFormIsSubmiting(false);
+        setFormHasSend(false);
     }, [nameData, emailData, phoneData, messageData, captchaData]);
 
     useEffect(() => {
@@ -60,15 +63,25 @@ const FormContainer: FC<FormContainerProps> = ({ isFormActive }) => {
         if (!formIsValid) return;
 
         setFormIsSubmiting(true);
-
-        // console.
+        setTimeout(() => {
+            setFormHasSend(true);
+        }, 3000)
+    }
+    const formSendCloseHandler = () => {
+        resetForm();
+        closeHandler();
     }
 
     return <div className={styles.container}>
         {formIsSubmiting && <div className={styles.sendingOverlay}>
             <div className={styles.infoContainer}>
-                <h4>Wysyłam wiadomość</h4>
-                <LoadingSpinner />
+                {formHasSend ? <>
+                    <h4>Wiadomość została wysłana</h4>
+                    <button className={styles.submit} onClick={formSendCloseHandler}>zamknij</button>
+                </> : <>
+                    <h4>Wysyłam wiadomość</h4>
+                    <LoadingSpinner />
+                </>}
             </div>
         </div>
         }
