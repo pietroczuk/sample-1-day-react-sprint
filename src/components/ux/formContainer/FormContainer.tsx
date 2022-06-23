@@ -7,6 +7,7 @@ import useInput from "../../../hooks/useInput";
 import BotPrevent from "../botPrevent/BotPrevent";
 import useCaptcha from "../../../hooks/useCaptcha";
 import { validateAnswer } from "../../../utils/botUtils";
+import CheckBox from "../../ui/checkBox/CheckBox";
 
 interface FormContainerProps {
     isFormActive: boolean
@@ -73,7 +74,7 @@ const FormContainer: FC<FormContainerProps> = ({ isFormActive }) => {
             />
 
             <BotPrevent {...captchaData} />
-            <p>moze jakies rodo jeszcze</p>
+            <CheckBox label="Rodo jakies czy cos innego" onClick={() => { }} />
 
             <button className={`${styles.submit} ${formIsValid ? '' : styles.disabled}`} type="submit">wyślij</button>
             <button onClick={resetForm}>reset</button>
