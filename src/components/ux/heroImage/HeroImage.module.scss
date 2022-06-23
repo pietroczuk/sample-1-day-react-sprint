@@ -69,11 +69,13 @@
 
 @media (max-width: 600px) {
     .heroCointaner {
+        overflow: hidden;
+
         .heroImage {
             width: 100%;
 
             img {
-                width: 100%;
+                width : 100%;
                 height: auto;
             }
         }
@@ -81,6 +83,41 @@
         .leftContent,
         .rightContent {
             font-size: 3em;
+        }
+
+        .leftContent {
+            left     : 50%;
+            transform: translateY(-50%) translateX(-50%);
+        }
+
+        .rightContent {
+            white-space: nowrap;
+            right      : 50%;
+            transform  : translateY(50%) translateX(50%);
+        }
+    }
+
+    @keyframes fadeInLeft {
+        from {
+            opacity: 0;
+            left   : 100%;
+        }
+
+        to {
+            opacity: 1;
+            left   : 50%;
+        }
+    }
+
+    @keyframes fadeInRight {
+        from {
+            opacity: 0;
+            right  : 100%;
+        }
+
+        to {
+            opacity: 1;
+            right  : 50%;
         }
     }
 }
